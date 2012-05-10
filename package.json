@@ -10,7 +10,7 @@
   ],
   "dependencies": {
     "connect": "1.8.6",
-    "oauth": "*",
+    "oauth": "*"
   },
   "engines": {
     "node": ">=0.4"
