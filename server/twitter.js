@@ -11,7 +11,7 @@ var oauthclient = new oauth.OAuth(
   keys.twitter.keyid,
   keys.twitter.secret,
   '1.0',
-  'http://ec2-176-34-215-221.eu-west-1.compute.amazonaws.com:3003/oauth/twitter/callback',
+  'http://ec2-176-34-215-221.eu-west-1.compute.amazonaws.com:8111/oauth/twitter/callback',
   'HMAC-SHA1',
   null,
   {'Accept': '*/*', 'Connection': 'close', 'User-Agent': 'twitter-js'}
@@ -64,7 +64,7 @@ var server = connect.createServer(
         {
           if (!error) {
             res.writeHead( 301, {
-              'Location':"http://ec2-176-34-215-221.eu-west-1.compute.amazonaws.com:3003/oauth/twitter/launch"
+              'Location':"http://ec2-176-34-215-221.eu-west-1.compute.amazonaws.com:8111/oauth/twitter/launch"
             })
             res.end()
           }
@@ -82,4 +82,5 @@ var server = connect.createServer(
   }),
   connect.static('../public')
 )
-server.listen(3003)
+server.listen(8111)
+console.log('Server running at http://ec2-176-34-215-221.eu-west-1.compute.amazonaws.com:8111/');

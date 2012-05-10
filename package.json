@@ -10,6 +10,7 @@
   ],
   "dependencies": {
     "connect": "1.8.6",
+    "url": "*",
     "oauth": "*"
   },
   "engines": {
