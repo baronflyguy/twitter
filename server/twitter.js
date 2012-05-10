@@ -2,6 +2,7 @@
 var connect = require('connect')
 var oauth   = require('oauth')
 var url     = require('url')
+var http    = require('http');
 
 var keys = require('./keys.js')
 
@@ -19,7 +20,8 @@ var oauthclient = new oauth.OAuth(
 
 var state = {}
 
-var server = connect.createServer(
+
+http = connect.createServer(
   connect.router(function(app){
 
     app.get('/oauth/twitter/login',function(req,res,next){
@@ -76,11 +78,12 @@ var server = connect.createServer(
     })
 
     app.get('/oauth/twitter/launch',function(req,res,next){
-      res.writeHead(200)
+      res.writeHead(200, {'Content-Type': 'text/plain'});
       res.end( 'Signed in with Twitter!' )
     })
   }),
   connect.static('../public')
 )
-server.listen(8111)
+http.listen(8111)
 console.log('Server running at http://ec2-176-34-215-221.eu-west-1.compute.amazonaws.com:8111/');
+
