@@ -1,0 +1,18 @@
+{
+  "name": "twitter-example",
+  "description": "Twitter example",
+  "keywords": ["social","media","example"],
+  "version": "0.0.1",
+  "homepage": "https://github.com/rjrodger/social-example",
+  "author": "Jonathan McDonald using Richard Rodger book example",
+  "contributors": [
+    "Richard Rodger <richard@ricebridge.com> (http://richardrodger.com/)"
+  ],
+  "dependencies": {
+    "connect": "1.8.6",
+    "oauth": "*",
+  },
+  "engines": {
+    "node": ">=0.4"
+  }
+}
